@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { border: 3px solid black; text-align: center; }
+        td { width: 100px; height: 50px }
+      </style>
+</head>
+<body>
+    <h1>글 목록</h1>
+    <table>
+        <th>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>내용</td>
+                <td>작성자</td>
+                <td>등록일</td>
+                <td>좋아요 수</td>
+                <td>조회 수</td>
+            </tr>
+        </th>
+        
+                {% for item in items %}
+                <form action="/board/hit?idx={{item.idx}}" method="post">
+                <tr>
+                <td>{{item.idx}}</td>
+                <!-- <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td> -->
+                <td><button type="submit" style="background-color:transparent;  border:0px transparent solid; cursor:pointer;">{{item.subject}}</button></td>
+                <td>{{item.content}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.likes}}</td>
+                <td>{{item.hit}}</td>
+            </tr>
+        </form>
+                {% endfor %}              
+    </table>
+    <a href="/board/write">글 쓰기</a>
+</body>
+</html>

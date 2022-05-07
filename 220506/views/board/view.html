@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>상세 페이지</h1>
+    <ul>
+        <li>
+            <label>번호</label>
+            <a>{{items.idx}}</a>
+        </li>
+        <li>
+            <label>작성자</label>
+            <a>{{items.name}}</a>
+        </li>
+        <li>
+            <label>제목</label>
+            <a>{{items.subject}}</a>
+        </li>
+        <li>
+            <label>내용</label>
+            <br><br>
+            <textarea>
+                {{items.content}}
+            </textarea>
+        </li>
+        <li>
+            <label>작성일</label>
+            <a>{{items.date}}</a>
+        </li>
+        <li>
+            <label>좋아요 수</label>
+            <a>{{items.likes}}</a>
+        </li>
+        <li>
+            <label>조회수</label>
+            <a>{{items.hit}}</a>
+        </li>
+    </ul>
+    <a href="/board/update?idx={{items.idx}}">수정하기</a>
+    <a href="/board/list">목록으로</a>
+    <form method="post">
+    <button type="submit" formaction="/board/like?idx={{items.idx}}" >좋아요</button>
+</form>
+</body>
+</html>
