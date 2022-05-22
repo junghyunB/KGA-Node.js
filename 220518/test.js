@@ -31,7 +31,7 @@ const 소나타 = () => {
 const 제네시스 = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log("제네시스 end")
+            resolve("제네시스 end")
         }, time())
         console.log("제네시스 go")
     })
