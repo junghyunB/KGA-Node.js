@@ -47,7 +47,7 @@ app.post("/auth/verify", (req, res) => {
         const result = jwt.verify(token, "jh2")
         response.result = true;
         response.data = result
-        res.status(200).json(response)
+        res.status(200).json(response.data)
     } catch (e) {
         response.msg = "토큰 변조"
         res.status(401).json(response)
